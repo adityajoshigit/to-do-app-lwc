@@ -32,7 +32,7 @@ export default class NewTask extends LightningElement {
     @track newTaskLabel = '';
     @track processing = false;
 
-    // button event handler functions
+    // event handler functions
     onAddClick() {
         if (this.newTaskLabel) {
             this.addNewTask();
@@ -44,6 +44,10 @@ export default class NewTask extends LightningElement {
                 ''
             );
         }
+    }
+
+    onNewTaskInputKeyUp(event) {
+        this.newTaskLabel = event.target.value;
     }
 
     // backend related functions

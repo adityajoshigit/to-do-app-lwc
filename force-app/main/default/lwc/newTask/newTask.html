@@ -6,30 +6,25 @@
         </template>
         <div class="slds-grid slds-wrap">
             <div class="slds-col slds-size_3-of-4">
-                <lightning-input 
+                <input 
                     type="text"
                     value={newTaskLabel}
                     placeholder="Task Name goes here..."
-                    max-length="200"
-                >
-                </lightning-input>
-                {newTaskLabel}
+                    class="slds-input"
+                    onkeyup={onNewTaskInputKeyUp}
+                />
             </div>
             <div class="slds-col slds-size_1-of-4">
                 <lightning-button 
                     class="add-btn"
                     variant="brand"
                     onclick={onAddClick}
+                    label={addBtnLabel}
                 >
-                    {addBtnLabel}
                 </lightning-button>
             </div>
             <!-- <div class="slds-col slds-size_4-of-4">
-                <template   for:each={categories}
-                            for:item="category"
-                >
-                    
-                </template>
+                {newTaskLabel}
             </div> -->
         </div>
     </lightning-card>
