@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import { ShowToastEvent } from 'lightning//platformShowToastEvent';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import TASK__C_OBJ from '@salesforce/schema/Task__c';
 import { createRecord } from 'lightning/uiRecordApi';
 import TASK__C_SHORT_DESCRIPTION_FLD from '@salesforce/schema/Task__c.Short_Description__c';
