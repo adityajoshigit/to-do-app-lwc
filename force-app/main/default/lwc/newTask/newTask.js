@@ -30,6 +30,7 @@ export default class NewTask extends LightningElement {
     @api makeBackendUpdates = false;
 
     @track newTaskLabel = '';
+    @track processing = false;
 
     // button event handler functions
     onAddClick() {
@@ -38,6 +39,7 @@ export default class NewTask extends LightningElement {
 
     // backend related functions
     addNewTask() {
+        this.processing = true;
         if (this.makeBackendUpdates) {
             const fields = {};
             fields[TASK__C_SHORT_DESCRIPTION_FLD.fieldApiName] = this.newTaskLabel;
@@ -52,14 +54,17 @@ export default class NewTask extends LightningElement {
                     this.showToast('New Task Created!', '', 'success', '');
                     this.fireCreationEvent(result.Id, this.newTaskLabel);
                     this.resetState();
+                    this.processing = false;
                 })
                 .catch(errorResult => {
                     this.showToast('Oops!', 'Something went wrong..', 'error', '');
                     console.log(errorResult);
+                    this.processing = false;
                 });
         } else {
             this.fireCreationEvent(null, this.newTaskLabel);
             this.resetState();
+            this.processing = false;
         }
     }
 
