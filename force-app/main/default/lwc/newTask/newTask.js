@@ -34,7 +34,16 @@ export default class NewTask extends LightningElement {
 
     // button event handler functions
     onAddClick() {
-        this.addNewTask();
+        if (this.newTaskLabel) {
+            this.addNewTask();
+        } else {
+            this.showToast(
+                'Oops!',
+                'Please type in the task name!',
+                'info',
+                ''
+            );
+        }
     }
 
     // backend related functions
