@@ -1,15 +1,15 @@
 <template>
-    <lightning-card title="Task Manager">
-        <div class="slds-p-around_xxx-small slds-m-around_xx-small ">
+    <lightning-card >
+        <div class="slds-p-around_x-small slds-m-around_x-small ">
             <c-new-task
-                add-btn-label="Add Task"
+                add-btn-label="Add"
                 make-backend-updates="true"
             ></c-new-task>
         </div>
-        <div class="slds-p-around_xxx-small slds-m-around_xx-small">
+        <div class="slds-p-around_x-small slds-m-around_x-small">
             <c-task-list
-                list-title="All Tasks"
-                tasks={alltasks}
+                tasks={allTasks}
+                list-title={title}
             ></c-task-list>
         </div>
     </lightning-card>

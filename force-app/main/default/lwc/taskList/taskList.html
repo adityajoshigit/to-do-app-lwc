@@ -1,6 +1,6 @@
 <template>
     <lightning-card title={listTitle}>
-        <div class="slds-grid slds-gutters_direct-xx-small">
+        <div class="slds-grid slds-wrap slds-gutters_direct-xx-small slds-m-around_xxx-small slds-p-around_small ">
             <div class="slds-col slds-size_1-of-1">
                 <lightning-input 
                     placeholder="type task name to search..."
@@ -9,7 +9,7 @@
                     onkeyup={onSearchInputKeyUp}
                 ></lightning-input>
             </div>
-            <template   for:each={tasksToShow}
+            <template   for:each={_tasks}
                         for:item="task"
             >
                 <div 
