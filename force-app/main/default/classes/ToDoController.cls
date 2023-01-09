@@ -1,6 +1,6 @@
 public with sharing class ToDoController {
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Task__c> getAllTasks(String status){
         Logger loggerObj = new Logger();
         List<Task__c> tasks;
