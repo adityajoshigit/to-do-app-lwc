@@ -24,4 +24,20 @@ export default class ToDoApp extends LightningElement {
         return this.allTasks.data;
     }
 
+
+    onSearchEventHandler(event) {
+        const internalSearch = event.detail.internalSearch;
+        const searchTerm = event.detail.searchTerm;
+        const searchResults = event.detail.searchResults;
+        console.log('internalSearch = ' + internalSearch);
+        console.log('searchResults = ' + searchResults);
+        console.log('searchTerm = ' + searchTerm);
+        // console.log(searchResults.length);
+        if (internalSearch) {
+            this.allTasks = searchResults;
+        } else {
+
+        }
+    }
+
 }

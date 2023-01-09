@@ -6,10 +6,19 @@
                 make-backend-updates="true"
             ></c-new-task>
         </div>
+        <div class="slds-p-around_x-small slds-m-around_x-small ">
+            <c-search-component
+                internal-search="true"
+                search-input-label="Search Tasks"
+                tasks={allTasks}
+                onsearch={onSearchEventHandler}
+            ></c-search-component>
+        </div>
         <div class="slds-p-around_x-small slds-m-around_x-small">
             <c-task-list
                 tasks={allTasks}
                 list-title={title}
+                show-search-bar="false"
             ></c-task-list>
         </div>
     </lightning-card>
