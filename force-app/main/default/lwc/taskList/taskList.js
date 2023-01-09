@@ -23,17 +23,7 @@ export default class TaskList extends LightningElement {
     @track _tasks = [];
 
     // handlers
-    onSearchInputKeyUp(event) {
-        const searchText = event.target.value;
-        if (searchText.trim() === '') {
-            this._tasks = this.originalTaskList;
-        } else {
-            if ((this.originalTaskList).length) {
-                this._tasks = this.originalTaskList.filter(t => t.Short_Description__c.includes(searchText));
-            }
-        }
-    }
-
+    
     tasksChangeHandler(value) {
         this._tasks = [];
         this.originalTaskList = [];
@@ -46,5 +36,20 @@ export default class TaskList extends LightningElement {
             this._tasks.push(taskelement);
             this.originalTaskList.push(taskelement);
         });
+    }
+
+    onSearchEventHandler(event) {
+        const internalSearch = event.detail.internalSearch;
+        const searchTerm = event.detail.searchTerm;
+        const searchResults = event.detail.searchResults;
+        console.log('internalSearch = ' + internalSearch);
+        console.log('searchResults = ' + searchResults);
+        console.log('searchTerm = ' + searchTerm);
+        // console.log(searchResults.length);
+        if (internalSearch) {
+            this._tasks = searchResults;
+        } else {
+
+        }
     }
 }

@@ -8,9 +8,7 @@ export default class SearchComponent extends LightningElement {
         return this._tasks;
     }
     set tasks(value) {
-        if (this._tasks.length === 0) {
-            this._tasks = value;
-        } 
+        this._tasks = value;
     }
 
 
