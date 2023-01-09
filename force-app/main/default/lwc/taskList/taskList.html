@@ -1,14 +1,14 @@
 <template>
     <lightning-card title={listTitle}>
-        <div class="slds-grid slds-wrap slds-gutters_direct-xx-small slds-m-around_xxx-small slds-p-around_small ">
-            <template if:false={_showSearchBar}>
+        <div class="slds-grid slds-wrap slds-gutters  ">
+            <template if:true={_showSearchBar}>
                 <div class="slds-col slds-size_1-of-1">
-                    <lightning-input 
-                        placeholder="type task name to search..."
-                        max-length="200"
-                        label="Search Tasks"
-                        onkeyup={onSearchInputKeyUp}
-                    ></lightning-input>
+                    <c-search-component
+                        internal-search="true"
+                        search-input-label="Search Tasks"
+                        tasks={originalTaskList}
+                        onsearch={onSearchEventHandler}
+                    ></c-search-component>
                 </div>
             </template>
             <template   for:each={_tasks}

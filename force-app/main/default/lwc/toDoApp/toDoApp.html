@@ -1,25 +1,25 @@
 <template>
     <lightning-card >
-        <div class="slds-p-around_x-small slds-m-around_x-small ">
+        <div class="slds-p-around_small slds-m-around_small ">
             <c-new-task
                 add-btn-label="Add"
                 make-backend-updates="true"
                 onnewtask={onNewTaskEventHandler}
             ></c-new-task>
         </div>
-        <div class="slds-p-around_x-small slds-m-around_x-small ">
+        <!-- <div class="slds-p-around_x-small slds-m-around_x-small ">
             <c-search-component
                 internal-search="true"
                 search-input-label="Search Tasks"
                 tasks={allTasks}
                 onsearch={onSearchEventHandler}
             ></c-search-component>
-        </div>
-        <div class="slds-p-around_x-small slds-m-around_x-small">
+        </div> -->
+        <div class="slds-p-around_small slds-m-around_small">
             <c-task-list
                 tasks={allTasks}
                 list-title={title}
-                show-search-bar="false"
+                show-search-bar="true"
             ></c-task-list>
         </div>
     </lightning-card>
